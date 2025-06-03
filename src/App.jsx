@@ -3,7 +3,8 @@ import Layout from "./layout/Layout";
 
 import Homepage from "./pages/Homepage";
 import MyPage from "./pages/MyPage";
-import ListPage from "./pages/ListPage.jsx";
+
+import ListPostPage from "./pages/posts/ListPostPage";
 
 
 export default function App(){
@@ -14,7 +15,10 @@ export default function App(){
           <Route element={<Layout/>}>
             <Route path="/" element={<Homepage />} />
             <Route path="/personalpage" element={<MyPage />} />
-            <Route path="/listpage" element={<ListPage />} />
+
+            <Route path="/posts">
+              <Route path="" element={<ListPostPage />} />
+            </Route>
           </Route>
         </Routes>
       </BrowserRouter>
