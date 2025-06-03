@@ -12,3 +12,7 @@
 }.container-page h1{
     font-size: 60px;
 }
+.table{
+    max-width: 90%;
+    margin-left: 50px;
+}
