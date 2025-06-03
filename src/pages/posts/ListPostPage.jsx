@@ -1,5 +1,6 @@
-import axios from "axios"
-import { useEffect, useState } from "react"
+import axios from "axios";
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function ListPostPage(){
     const [posts, setPosts] = useState([]);
@@ -18,15 +19,19 @@ export default function ListPostPage(){
                 <thead>
                     <tr>
                         <th>ID</th>
-                         <th>Title</th>
+                         <th>TITLE</th>
+                         <th>CONTENT</th>
                     </tr>
                 </thead> 
                 <tbody>
                     {posts.map((post)=>(
                         <tr key={post.id}>
+                            <td>{post.id}</td>
                             <td>{post.title}</td>
                             <td>{post.content}</td>
-                            <td>Show</td>
+                            <td>
+                                <Link to={`/posts/${post.id}`}>Show</Link>
+                            </td>
                         </tr>
                     ))}
                 </tbody>           
